@@ -1,0 +1,463 @@
+/* ----------------- Skip to Main Content Link ----------------- */
+a[href="#main"] {
+  display: inline-block;
+  background-color: #444; /* Dark background */
+  color: white; /* White text */
+  padding: 1vw 2vw; /* Padding scales with viewport width */
+  font-size: 2vw; /* Font size scales with viewport width */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Add rounded corners */
+  margin: 1em 0; /* Fixed margin around the link */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover and Focus State - Pop-out Effect for Skip to Main Content */
+a[href="#main"]:hover,
+a[href="#main"]:focus {
+  background-color: #ff9900; /* Bright yellow background on hover/focus */
+  color: white; /* Keep white text */
+  text-decoration: underline; /* Underline the text on hover/focus */
+  transform: scale(1.1); /* Slight pop-out effect */
+}
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  a[href="#main"] {
+    font-size: 3vw; /* Increase font size on tablet-sized screens */
+    padding: 2vw 3vw; /* Increase padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  a[href="#main"] {
+    font-size: 4vw; /* Further increase font size on very small screens */
+    padding: 3vw 4vw; /* Increase padding on very small screens */
+  }
+}
+
+/* ----------------- Navigation Styles ----------------- */
+nav {
+  background-color: #333;
+  padding: .5em;
+  font-family: Arial, sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0.5em 0;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: #444;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover and Focus State - Pop-out Effect for Navigation Buttons */
+nav a:hover,
+nav a:focus {
+  background-color: #575757; /* Darker background on hover */
+  transform: scale(1.1); /* Slight pop-out effect */
+}
+
+/* Focus outline for accessibility */
+nav a:focus {
+  outline: 2px solid yellow;
+  outline-offset: 2px;
+}
+
+/* Larger screens */
+@media (min-width: 750px) {
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 1.5em;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.5em 1em;
+  }
+}
+
+/* ----------------- Disable Animations for Users Who Prefer Reduced Motion ----------------- */
+@media (prefers-reduced-motion: reduce) {
+  a[href="#main"],
+  nav a {
+    transition: none; /* Disable transitions */
+    transform: none; /* Disable pop-out effect */
+  }
+}
+
+
+/* ----------------- Header Styles ----------------- */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  text-align: center;
+  background-color: #444;
+  color: white;
+  padding: 1em;
+}
+
+header h1 {
+  font-size: 8vw;
+  margin: 0.5em 0;
+}
+
+header h2 {
+  font-size: 2vw;
+  margin: 0.5em 0;
+}
+
+header a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-size: 5vw;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 10vw;
+  }
+
+  header h2 {
+    font-size: 5vw;
+  }
+
+  header a {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 12vw;
+  }
+
+  header h2 {
+    font-size: 6vw;
+  }
+
+  header a {
+    font-size: 4vw;
+  }
+}
+/* ----------------- Race Summary Section ----------------- */
+#summary {
+  font-size: 2.5vw;
+  line-height: 1.6;
+  font-weight: normal;
+  padding: 1em;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  #summary {
+    font-size: 3.5vw;
+  }
+}
+/* ----------------- Team Results Section ----------------- */
+#team-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1em;
+  background-color: #f5f5f5;
+}
+
+#team-results h2 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+#team-results table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#team-results th, #team-results td {
+  border: 1px solid #ccc;
+  padding: 0.5em 1em;
+  font-size: 2vw;
+  text-align: center;
+}
+
+#team-results th {
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0; /* Sticky header */
+}
+
+#team-results td {
+  background-color: #fff;
+  color: #333;
+}
+
+#team-results tr:nth-child(even) td {
+  background-color: #f0f0f0; /* Alternating row colors for readability */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  #team-results h2 {
+    font-size: 3.5vw;
+  }
+
+  #team-results th, #team-results td {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  #team-results h2 {
+    font-size: 4.5vw;
+  }
+
+  #team-results th, #team-results td {
+    font-size: 4vw;
+  }
+
+  /* Make table scrollable for small screens */
+  #team-results table {
+    display: block;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent table cells from breaking into multiple lines */
+  }
+}
+
+
+/* ----------------- Individual Results Section ----------------- */
+#individual-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1em;
+  background-color: #fafafa;
+}
+
+#individual-results h2 {
+  font-size: 3vw; /* Default font size for larger screens */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  color: #333;
+}
+
+/* Athlete profile styling */
+#individual-results .athlete {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Circular image styling with shadow and responsive size */
+#individual-results img {
+  width: 25vw; /* Larger size based on 25% of the viewport width */
+  height: 25vw; /* Maintain equal height and width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  border: 3px solid #FF5722; /* Add a border around the image */
+  object-fit: cover; /* Ensures the image is cropped correctly within the circular frame */
+  margin-bottom: 1em;
+}
+
+/* Athlete caption */
+#individual-results figcaption {
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* Athlete details centered */
+#individual-results dl {
+  display: flex; /* Use flexbox to ensure uniform spacing between label-value pairs */
+  justify-content: center; /* Center the entire set of details */
+  flex-wrap: wrap; /* Ensure wrapping for smaller screens if necessary */
+  gap: 2vw; /* Use viewport width (vw) for proportional spacing between pairs */
+  margin: 0;
+  padding: 0;
+  margin-top: 0.5em;
+}
+
+/* Style for each label-value pair */
+#individual-results dl dt, #individual-results dl dd {
+  display: inline-block; /* Ensure both label and value are inline */
+  font-size: 2vw;
+  font-weight: normal;
+  color: #333; /* Same color for labels */
+  margin: 0; /* Remove margin for tighter control over spacing */
+}
+
+/* Value styling */
+#individual-results dl dd {
+  color: #FF5722; /* Change value color (e.g., orange) */
+}
+
+/* Adjustments for medium screens */
+@media (max-width: 768px) {
+  #individual-results h2 {
+    font-size: 4vw;
+  }
+
+  #individual-results img {
+    width: 35vw; /* Larger size for medium screens */
+    height: 35vw; /* Keep height proportional for the circle */
+  }
+
+  #individual-results figcaption {
+    font-size: 3.5vw;
+  }
+
+  #individual-results dl {
+    gap: 3vw; /* Increase the gap slightly for medium screens */
+  }
+
+  #individual-results dl dt, #individual-results dl dd {
+    font-size: 3vw;
+  }
+}
+
+/* Adjustments for small screens */
+@media (max-width: 480px) {
+  #individual-results h2 {
+    font-size: 5vw;
+  }
+
+  #individual-results img {
+    width: 45vw; /* Larger size for small screens */
+    height: 45vw; /* Ensure height matches width for proper circle */
+  }
+
+  #individual-results figcaption {
+    font-size: 4.5vw;
+  }
+
+  #individual-results dl {
+    gap: 4vw; /* Increase the gap for small screens */
+  }
+
+  #individual-results dl dt, #individual-results dl dd {
+    font-size: 4vw;
+  }
+}
+
+
+
+/* ----------------- Gallery Section ----------------- */
+#gallery h2 {
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+
+/* ----------------- Footer Styles ----------------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+footer p, footer address {
+  margin: 0.5em 0;
+  font-size: 2.5vw;
+  line-height: 1.5;
+}
+
+
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-size: 2.5vw;
+}
+
+footer a:hover, footer a:focus {
+  text-decoration: underline;
+  outline: none;
+  color: #ff9900;
+  outline: 2px solid #ff9900;
+  outline-offset: 3px;
+}
+
+footer a i {
+  font-size: 3vw;
+  margin-left: 0.5em;
+}
+
+footer a:hover i, footer a:focus i {
+  color: #ff9900;
+}
+
+/* Media Queries for Footer */
+@media (max-width: 768px) {
+  footer p, footer address {
+    font-size: 3vw;
+  }
+
+  footer a {
+    font-size: 3vw;
+  }
+
+  footer a i {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  footer p, footer address {
+    font-size: 4vw;
+  }
+
+  footer a {
+    font-size: 4vw;
+  }
+
+  footer a i {
+    font-size: 5vw;
+  }
+}
+
+
