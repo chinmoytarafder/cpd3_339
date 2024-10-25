@@ -36,7 +36,7 @@ def csv_to_html(csv_filename, output_folder):
    <a href = "#main"  aria-label="Skip to main content">Skip to Main Content</a>
 <nav>
   <ul>
-    <li><a href="index.html" aria-label="Go to Home Page">Home Page</a></li>
+    <li><a href="../index.html" aria-label="Go to Home Page">Home Page</a></li>
     <li><a href="#summary" aria-label="Jump to Race Summary">Summary</a></li>
     <li><a href="#team-results" aria-label="View Team Results">Team Results</a></li>
     <li><a href="#individual-results" aria-label="View Individual Results">Individual Results</a></li>
