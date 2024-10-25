@@ -1,4 +1,4 @@
-/* General Styles (default to light mode if no preference is set) */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,28 +9,28 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #444; /* Dark background for contrast */
-    color: white; /* Light text */
+    background-color: #444; /* Dark background */
+    color: white;
     padding: 2rem;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2rem; /* A more general size for all screens */
+    font-size: 2rem;
     margin: 0;
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #333;
+    background-color: #9ea155;
     padding: 1rem 0;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
@@ -44,16 +44,14 @@ nav a {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    background-color: #8590b4;
+    background-color: #252320;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover and Focus State - Pop-out Effect for Links */
 nav a:hover,
 nav a:focus {
     background-color: #ff9900;
     transform: scale(1.05);
-    text-decoration: underline;
     outline: 2px solid yellow;
     outline-offset: 3px;
 }
@@ -67,72 +65,30 @@ footer {
     font-size: 1rem;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* Reduced Motion - Disable transitions and animations */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     nav a {
-        transition: none; /* Disable transitions */
+        transition: none;
     }
-
     nav a:hover,
     nav a:focus {
-        transform: none; /* Disable transform animations */
-    }
-}
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: #f5f5f5; /* Light mode background */
-        color: #333; /* Dark text for light mode */
-    }
-
-    header {
-        background-color: #444; /* Darker header background in light mode */
-        color: white; /* Light text for header */
-    }
-
-    nav {
-        background-color: #858cdd; /* Darker nav background for light mode */
-    }
-
-    nav a {
-        background-color: #555; /* Slightly lighter background for links */
-        color: white; /* Light text for links */
-    }
-
-    footer {
-        background-color: #444; /* Dark footer for light mode */
-        color: white;
+        transform: none;
     }
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #222; /* Darker background for dark mode */
-        color: #ddd; /* Light text for dark mode */
-    }
-
-    header {
-        background-color: #333; /* Dark header for dark mode */
-        color: #ddd; /* Light text for dark mode */
+    body, header, footer {
+        background-color: #333;
+        color: #ddd;
     }
 
     nav {
-        background-color: #444; /* Slightly lighter background for nav in dark mode */
+        background-color: #444;
     }
 
     nav a {
-        background-color: #555; /* Slightly lighter background for links */
-        color: #ddd; /* Light text for links */
-    }
-
-    footer {
-        background-color: #333; /* Darker footer for dark mode */
+        background-color: #555;
         color: #ddd;
     }
 }
