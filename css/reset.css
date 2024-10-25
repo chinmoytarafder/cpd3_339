@@ -1,0 +1,55 @@
+/* Reset.css - Minimal impact on existing styles */
+
+/* Ensure consistent box-sizing across browsers */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding for common elements */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set base font size and line height */
+html {
+    font-size: 100%; /* Default font size (16px) */
+    line-height: 1.5;
+}
+
+/* Remove list styling */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Normalize form element appearance */
+button, input, textarea, select {
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    box-shadow: none; /* Remove any shadow from buttons */
+    outline: none;
+}
+
+/* Tables should collapse borders */
+table {
+    border-collapse: collapse;
+}
+
+/* Consistent focus outlines for accessibility */
+:focus {
+    outline: 2px solid black;
+    outline-offset: 2px;
+}

@@ -276,12 +276,9 @@ header a:hover {
   height: auto;
   border: 2px solid #ddd;
   border-radius: 8px;
-  transition: transform 0.2s ease;
 }
 
-#image-gallery img:hover {
-  transform: scale(1.05);
-}
+
 
 
 /* ----------------- Footer Styles ----------------- */
