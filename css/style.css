@@ -3,12 +3,12 @@ a[href="#main"] {
   display: inline-block;
   background-color: #444; /* Dark background */
   color: white; /* White text */
-  padding: 1vw 2vw; /* Padding scales with viewport width */
-  font-size: 2vw; /* Font size scales with viewport width */
+  padding: 3vw 6vw; /* Padding scales with viewport width */
+  font-size: 5vw; /* Font size scales with viewport width */
   text-decoration: none; /* Remove underline */
   border-radius: 5px; /* Add rounded corners */
-  margin: 1em 0; /* Fixed margin around the link */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  margin: 2vw 0; /* Margin scales with viewport */
+  transition: transform 0.6s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
 }
 
 /* Hover and Focus State - Pop-out Effect for Skip to Main Content */
@@ -20,25 +20,23 @@ a[href="#main"]:focus {
   transform: scale(1.1); /* Slight pop-out effect */
 }
 
-/* Adjustments for Smaller Screens */
-@media (max-width: 768px) {
+/* Reduced Motion - Disable transitions and animations */
+@media (prefers-reduced-motion: reduce) {
   a[href="#main"] {
-    font-size: 3vw; /* Increase font size on tablet-sized screens */
-    padding: 2vw 3vw; /* Increase padding on smaller screens */
+    transition: none; /* Disable transitions */
+  }
+
+  a[href="#main"]:hover,
+  a[href="#main"]:focus {
+    transform: none; /* Disable transform animations */
   }
 }
 
-@media (max-width: 480px) {
-  a[href="#main"] {
-    font-size: 4vw; /* Further increase font size on very small screens */
-    padding: 3vw 4vw; /* Increase padding on very small screens */
-  }
-}
 
 /* ----------------- Navigation Styles ----------------- */
 nav {
   background-color: #333;
-  padding: .5em;
+  padding: 2vw;
   font-family: Arial, sans-serif;
 }
 
@@ -49,19 +47,19 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0.5em 0;
+  margin: 3vw 0;
 }
 
 nav a {
   display: block;
   text-decoration: none;
   color: white;
-  font-size: 1.2em;
-  padding: 0.5em;
+  font-size: 5vw;
+  padding: 3vw;
   border-radius: 5px;
   background-color: #444;
   text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Hover and Focus State - Pop-out Effect for Navigation Buttons */
@@ -77,29 +75,15 @@ nav a:focus {
   outline-offset: 2px;
 }
 
-/* Larger screens */
-@media (min-width: 750px) {
-  nav ul {
-    display: flex;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 0 1.5em;
-  }
-
-  nav a {
-    display: inline-block;
-    padding: 0.5em 1em;
-  }
-}
-
-/* ----------------- Disable Animations for Users Who Prefer Reduced Motion ----------------- */
+/* Reduced Motion - Disable transitions and animations */
 @media (prefers-reduced-motion: reduce) {
-  a[href="#main"],
   nav a {
     transition: none; /* Disable transitions */
-    transform: none; /* Disable pop-out effect */
+  }
+
+  nav a:hover,
+  nav a:focus {
+    transform: none; /* Disable transform animations */
   }
 }
 
@@ -110,75 +94,41 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 20vh;
+  min-height: 30vh;
   text-align: center;
   background-color: #444;
   color: white;
-  padding: 1em;
+  padding: 4vw;
 }
 
 header h1 {
-  font-size: 8vw;
-  margin: 0.5em 0;
+  font-size: 10vw;
+  margin: 1vw 0;
 }
 
 header h2 {
-  font-size: 2vw;
-  margin: 0.5em 0;
+  font-size: 5vw;
+  margin: 1vw 0;
 }
 
 header a {
   color: #ffcc00;
   text-decoration: none;
-  font-size: 5vw;
+  font-size: 7vw;
 }
 
 header a:hover {
   text-decoration: underline;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 10vw;
-  }
-
-  header h2 {
-    font-size: 5vw;
-  }
-
-  header a {
-    font-size: 3vw;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 12vw;
-  }
-
-  header h2 {
-    font-size: 6vw;
-  }
-
-  header a {
-    font-size: 4vw;
-  }
-}
 /* ----------------- Race Summary Section ----------------- */
 #summary {
-  font-size: 2.5vw;
+  font-size: 4vw;
   line-height: 1.6;
   font-weight: normal;
-  padding: 1em;
+  padding: 4vw;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  #summary {
-    font-size: 3.5vw;
-  }
-}
 /* ----------------- Team Results Section ----------------- */
 #team-results {
   display: flex;
@@ -187,26 +137,26 @@ header a:hover {
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  padding: 1em;
+  padding: 4vw;
   background-color: #f5f5f5;
 }
 
 #team-results h2 {
-  font-size: 2.5vw;
+  font-size: 6vw;
   font-weight: bold;
-  margin-bottom: 1em;
+  margin-bottom: 2vw;
 }
 
 #team-results table {
   border-collapse: collapse;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
 }
 
 #team-results th, #team-results td {
   border: 1px solid #ccc;
-  padding: 0.5em 1em;
-  font-size: 2vw;
+  padding: 2vw 4vw;
+  font-size: 4vw;
   text-align: center;
 }
 
@@ -226,34 +176,12 @@ header a:hover {
   background-color: #f0f0f0; /* Alternating row colors for readability */
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  #team-results h2 {
-    font-size: 3.5vw;
-  }
-
-  #team-results th, #team-results td {
-    font-size: 3vw;
-  }
+/* Make table scrollable for small screens */
+#team-results table {
+  display: block;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent table cells from breaking into multiple lines */
 }
-
-@media (max-width: 480px) {
-  #team-results h2 {
-    font-size: 4.5vw;
-  }
-
-  #team-results th, #team-results td {
-    font-size: 4vw;
-  }
-
-  /* Make table scrollable for small screens */
-  #team-results table {
-    display: block;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent table cells from breaking into multiple lines */
-  }
-}
-
 
 /* ----------------- Individual Results Section ----------------- */
 #individual-results {
@@ -263,157 +191,86 @@ header a:hover {
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  padding: 1em;
+  padding: 4vw;
   background-color: #fafafa;
 }
 
 #individual-results h2 {
-  font-size: 3vw; /* Default font size for larger screens */
+  font-size: 6vw;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 1em;
-  padding: 0.5em;
-  color: #333;
+  margin-bottom: 2vw;
 }
 
 /* Athlete profile styling */
 #individual-results .athlete {
-  margin: 1em 0;
+  margin: 4vw 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
 /* Circular image styling with shadow and responsive size */
 #individual-results img {
-  width: 25vw; /* Larger size based on 25% of the viewport width */
-  height: 25vw; /* Maintain equal height and width for a perfect circle */
-  border-radius: 50%; /* Makes the image circular */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-  border: 3px solid #FF5722; /* Add a border around the image */
-  object-fit: cover; /* Ensures the image is cropped correctly within the circular frame */
-  margin-bottom: 1em;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #FF5722;
+  object-fit: cover;
+  margin-bottom: 2vw;
 }
 
 /* Athlete caption */
 #individual-results figcaption {
-  font-size: 2.5vw;
+  font-size: 5vw;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin-bottom: 2vw;
 }
 
 /* Athlete details centered */
 #individual-results dl {
-  display: flex; /* Use flexbox to ensure uniform spacing between label-value pairs */
-  justify-content: center; /* Center the entire set of details */
-  flex-wrap: wrap; /* Ensure wrapping for smaller screens if necessary */
-  gap: 2vw; /* Use viewport width (vw) for proportional spacing between pairs */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4vw;
   margin: 0;
   padding: 0;
-  margin-top: 0.5em;
 }
 
-/* Style for each label-value pair */
 #individual-results dl dt, #individual-results dl dd {
-  display: inline-block; /* Ensure both label and value are inline */
-  font-size: 2vw;
+  display: inline-block;
+  font-size: 4vw;
   font-weight: normal;
-  color: #333; /* Same color for labels */
-  margin: 0; /* Remove margin for tighter control over spacing */
+  color: #333;
 }
 
-/* Value styling */
 #individual-results dl dd {
-  color: #821304; /* Change value color (e.g., orange) */
+  color: #821304;
 }
 
-/* Adjustments for medium screens */
-@media (max-width: 768px) {
-  #individual-results h2 {
-    font-size: 4vw;
-  }
-
-  #individual-results img {
-    width: 35vw; /* Larger size for medium screens */
-    height: 35vw; /* Keep height proportional for the circle */
-  }
-
-  #individual-results figcaption {
-    font-size: 3.5vw;
-  }
-
-  #individual-results dl {
-    gap: 3vw; /* Increase the gap slightly for medium screens */
-  }
-
-  #individual-results dl dt, #individual-results dl dd {
-    font-size: 3vw;
-  }
-}
-
-/* Adjustments for small screens */
-@media (max-width: 480px) {
-  #individual-results h2 {
-    font-size: 5vw;
-  }
-
-  #individual-results img {
-    width: 45vw; /* Larger size for small screens */
-    height: 45vw; /* Ensure height matches width for proper circle */
-  }
-
-  #individual-results figcaption {
-    font-size: 4.5vw;
-  }
-
-  #individual-results dl {
-    gap: 4vw; /* Increase the gap for small screens */
-  }
-
-  #individual-results dl dt, #individual-results dl dd {
-    font-size: 4vw;
-  }
-}
-
-
-
-/* ----------------- Gallery Section ----------------- */ 
-/* Gallery section */
+/* ----------------- Gallery Section ----------------- */
 #gallery {
-  padding: 20px;
+  padding: 4vw;
   background-color: #f4f4f4;
-  margin-top: 30px;
-  text-align: center; /* Center the entire gallery section */
+  text-align: center;
 }
 
-/* Gallery heading styles */
-#gallery-heading {
-  margin-bottom: 20px;
-}
-
-#gallery-heading h2 {
-  font-size: 4vw; /* Adjusted to 4vw to scale better on larger screens */
+#gallery h2 {
+  font-size: 7vw;
   font-weight: bold;
-  margin: 0;
-  line-height: 1.2; /* Adjusts spacing for better readability */
+  margin-bottom: 4vw;
 }
 
-/* Image grid layout */
 #image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-  grid-gap: 20px; /* Space between images */
+  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+  grid-gap: 4vw;
   justify-items: center;
   width: 100%;
-  max-width: 1200px; /* Max width to contain the grid */
-  margin: 0 auto; /* Center the grid container */
 }
 
-/* Image styling */
 #image-gallery img {
   width: 100%;
-  max-width: 300px;
   height: auto;
   border: 2px solid #ddd;
   border-radius: 8px;
@@ -424,31 +281,28 @@ header a:hover {
   transform: scale(1.05);
 }
 
-
 /* ----------------- Footer Styles ----------------- */
 footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: #000000;
   color: white;
-  padding: 2em 1em;
+  padding: 6vw;
   text-align: center;
 }
 
 footer p, footer address {
-  margin: 0.5em 0;
-  font-size: 2.5vw;
+  margin: 2vw 0;
+  font-size: 4vw;
   line-height: 1.5;
 }
-
-
 
 footer a {
   color: #ffcc00;
   text-decoration: none;
-  font-size: 2.5vw;
+  font-size: 4vw;
 }
 
 footer a:hover, footer a:focus {
@@ -460,41 +314,247 @@ footer a:hover, footer a:focus {
 }
 
 footer a i {
-  font-size: 3vw;
-  margin-left: 0.5em;
+  font-size: 5vw;
+  margin-left: 1vw;
 }
 
 footer a:hover i, footer a:focus i {
   color: #ff9900;
 }
 
-/* Media Queries for Footer */
-@media (max-width: 768px) {
-  footer p, footer address {
-    font-size: 3vw;
-  }
 
-  footer a {
-    font-size: 3vw;
-  }
+/* Default Styles (Light Mode) */
+a[href="#main"] {
+  display: inline-block;
+  background-color: #444; /* Dark background */
+  color: white; /* White text */
+  padding: 3vw 6vw;
+  font-size: 5vw;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 2vw 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-  footer a i {
-    font-size: 4vw;
+/**************Dark Mode Styles****************/
+/* ----------------- Race Summary Section ----------------- */
+#summary {
+  font-size: 4vw;
+  line-height: 1.6;
+  font-weight: normal;
+  padding: 4vw;
+  background-color: #fafafa; /* Light mode background */
+  color: #333; /* Light mode text color */
+}
+
+/************** Dark Mode Styles for Summary Section ****************/
+@media (prefers-color-scheme: dark) {
+  #summary {
+    background-color: #333; /* Dark mode background */
+    color: #ddd; /* Dark mode text color */
   }
 }
 
-@media (max-width: 480px) {
-  footer p, footer address {
-    font-size: 4vw;
-  }
-
-  footer a {
-    font-size: 4vw;
-  }
-
-  footer a i {
-    font-size: 5vw;
-  }
+/* ----------------- Team Results Section ----------------- */
+#team-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 4vw;
+  background-color: #f5f5f5; /* Light mode background */
+  color: #333; /* Light mode text color */
 }
 
+#team-results h2 {
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
 
+#team-results table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#team-results th, #team-results td {
+  border: 1px solid #ccc;
+  padding: 2vw 4vw;
+  font-size: 4vw;
+  text-align: center;
+}
+
+#team-results th {
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+#team-results td {
+  background-color: #fff;
+  color: #333;
+}
+
+#team-results tr:nth-child(even) td {
+  background-color: #f0f0f0; /* Alternating row colors */
+}
+
+/* Dark Mode Styles for Team Results Section */
+@media (prefers-color-scheme: dark) {
+  #team-results {
+    background-color: #333; /* Dark mode background */
+    color: #ddd; /* Dark mode text color */
+  }
+
+  #team-results th {
+    background-color: #444; /* Dark mode header background */
+    color: #fff; /* Dark mode header text */
+  }
+
+  #team-results td {
+    background-color: #444; /* Dark mode cell background */
+    color: #ddd; /* Dark mode cell text */
+  }
+
+  #team-results tr:nth-child(even) td {
+    background-color: #555; /* Dark mode alternating row colors */
+  }
+}
+/* ----------------- Individual Results Section ----------------- */
+#individual-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 4vw;
+  background-color: #fafafa; /* Light mode background */
+  color: #333; /* Light mode text color */
+}
+
+#individual-results h2 {
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+/* Athlete profile styling */
+#individual-results .athlete {
+  margin: 4vw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circular image styling with shadow and responsive size */
+#individual-results img {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #FF5722;
+  object-fit: cover;
+  margin-bottom: 2vw;
+}
+
+/* Athlete caption */
+#individual-results figcaption {
+  font-size: 5vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+/* Athlete details centered */
+#individual-results dl {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4vw;
+  margin: 0;
+  padding: 0;
+}
+
+#individual-results dl dt, #individual-results dl dd {
+  display: inline-block;
+  font-size: 4vw;
+  font-weight: normal;
+  color: #333; /* Light mode text color */
+}
+
+#individual-results dl dd {
+  color: #821304;
+}
+
+/* Dark Mode Styles for Individual Results Section */
+@media (prefers-color-scheme: dark) {
+  #individual-results {
+    background-color: #333; /* Dark mode background */
+    color: #ddd; /* Dark mode text color */
+  }
+
+  #individual-results img {
+    border-color: #FF5722; /* Keep border consistent in dark mode */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Darker shadow in dark mode */
+  }
+
+  #individual-results dl dt, #individual-results dl dd {
+    color: #ddd; /* Dark mode text color for details */
+  }
+
+  #individual-results dl dd {
+    color: #FF5722; /* Keep distinctive color in dark mode */
+  }
+}
+/* ----------------- Gallery Section ----------------- */
+#gallery {
+  padding: 4vw;
+  background-color: #f4f4f4; /* Light mode background */
+  text-align: center;
+}
+
+#gallery h2 {
+  font-size: 7vw;
+  font-weight: bold;
+  margin-bottom: 4vw;
+}
+
+#image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+  grid-gap: 4vw;
+  justify-items: center;
+  width: 100%;
+}
+
+#image-gallery img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+#image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Dark Mode Styles for Gallery Section */
+@media (prefers-color-scheme: dark) {
+  #gallery {
+    background-color: #333; /* Dark mode background */
+    color: #ddd; /* Dark mode text color */
+  }
+
+  #image-gallery img {
+    border-color: #242424; /* Dark mode border for images */
+  }
+
+  #gallery h2 {
+    color: #fff; /* Dark mode text color for the heading */
+  }
+}
