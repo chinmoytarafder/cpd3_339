@@ -325,7 +325,7 @@ header a:hover {
 
 /* Value styling */
 #individual-results dl dd {
-  color: #FF5722; /* Change value color (e.g., orange) */
+  color: #821304; /* Change value color (e.g., orange) */
 }
 
 /* Adjustments for medium screens */
@@ -378,14 +378,51 @@ header a:hover {
 
 
 
-/* ----------------- Gallery Section ----------------- */
-#gallery h2 {
-  font-size: 3vw;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1em;
+/* ----------------- Gallery Section ----------------- */ 
+/* Gallery section */
+#gallery {
+  padding: 20px;
+  background-color: #f4f4f4;
+  margin-top: 30px;
+  text-align: center; /* Center the entire gallery section */
 }
 
+/* Gallery heading styles */
+#gallery-heading {
+  margin-bottom: 20px;
+}
+
+#gallery-heading h2 {
+  font-size: 4vw; /* Adjusted to 4vw to scale better on larger screens */
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2; /* Adjusts spacing for better readability */
+}
+
+/* Image grid layout */
+#image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  grid-gap: 20px; /* Space between images */
+  justify-items: center;
+  width: 100%;
+  max-width: 1200px; /* Max width to contain the grid */
+  margin: 0 auto; /* Center the grid container */
+}
+
+/* Image styling */
+#image-gallery img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+#image-gallery img:hover {
+  transform: scale(1.05);
+}
 
 
 /* ----------------- Footer Styles ----------------- */
