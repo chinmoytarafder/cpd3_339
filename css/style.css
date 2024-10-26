@@ -250,33 +250,35 @@ header a:hover {
   color: #821304;
 }
 
+
+
+
 /* ----------------- Gallery Section ----------------- */
 #gallery {
   padding: 4vw;
   background-color: #f4f4f4;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+  gap: 4vw; /* Space between images */
+  justify-items: center;
+  width: 100%;
 }
 
 #gallery h2 {
   font-size: 7vw;
   font-weight: bold;
   margin-bottom: 4vw;
+  grid-column: span 3; /* Ensure the heading spans all 3 columns */
 }
 
-#image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
-  grid-gap: 4vw;
-  justify-items: center;
-  width: 100%;
-}
-
-#image-gallery img {
-  width: 100%;
-  height: auto;
+#gallery img {
+  width: 100%; /* Image will fill its grid cell */
+  height: auto; /* Maintain aspect ratio */
   border: 2px solid #ddd;
   border-radius: 8px;
 }
+
 
 
 
