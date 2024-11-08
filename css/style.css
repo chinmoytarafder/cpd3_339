@@ -220,7 +220,7 @@ header a:hover {
   line-height: 1.6;
   font-weight: normal;
   padding: 4vw;
-  background: radial-gradient(circle, #ebedb7b3 50%, transparent 5%) repeat;
+  background: #f6f99eb3;
   background-size: 40px 40px; /* Increase dot size */
 }
 
