@@ -875,7 +875,7 @@ img {
 
 img:hover,
 img:focus {
-  transform: scale(1.3); /* Slightly enlarge the image */
+  transform: scale(1.1); /* Slightly enlarge the image */
   animation: grayscaleEffect 6s forwards; /* Trigger grayscale animation */
 }
 
