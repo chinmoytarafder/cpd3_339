@@ -83,7 +83,15 @@ def csv_to_html(csv_filename, output_folder):
                     html_content += "</table>\n"
                     html_content += """</section>\n
                     <section id="individual-results">\n
-                    <h2>Individual Results</h2>"""
+                    <h2>Individual Results</h2>
+                    <label for="grade-filter">Filter by Grade:</label>
+                    <select id="grade-filter">
+                        <option value="all">All Grades</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>"""
 
                 place = row[0]
                 grade = row[1]
@@ -127,7 +135,9 @@ def csv_to_html(csv_filename, output_folder):
                                     </a>
                                 </p>
                                 </footer>
-
+        <script src="../js/lightbox.js"></script>
+        <script src="../js/tabindex.js"></script>
+        <script src="../js/filter.js"></script>
         </body>
 </html>
 """

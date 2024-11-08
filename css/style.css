@@ -1,36 +1,58 @@
+
+
+
+
 /* ----------------- Skip to Main Content Link ----------------- */
+
+/* Hover and Focus State - Pop-out Effect for Skip to Main Content */
 a[href="#main"] {
   display: inline-block;
   background-color: #444; /* Dark background */
   color: white; /* White text */
-  padding: 3vw 6vw; /* Padding scales with viewport width */
-  font-size: 5vw; /* Font size scales with viewport width */
+  padding: 3vw 5vw; /* Viewport-relative padding for scalability */
+  font-size: 4vw; /* Viewport-relative font size for scalability */
   text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Add rounded corners */
-  margin: 2vw 0; /* Margin scales with viewport */
-  transition: transform 0.6s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 5px; /* Rounded corners */
+  margin: .5vw 0; /* Scalable margin */
+  transition: transform 0.6s ease, background-color 0.3s ease; /* Smooth transitions */
 }
 
-/* Hover and Focus State - Pop-out Effect for Skip to Main Content */
 a[href="#main"]:hover,
 a[href="#main"]:focus {
   background-color: #ff9900; /* Bright yellow background on hover/focus */
   color: white; /* Keep white text */
-  text-decoration: underline; /* Underline the text on hover/focus */
-  transform: scale(1.1); /* Slight pop-out effect */
+  text-decoration: underline; /* Underline on hover/focus */
+  transform: scale(1.2); /* Slight pop-out effect */
+}
+
+/* Styles for medium screens and larger */
+@media (min-width: 768px) {
+  a[href="#main"] {
+    padding: 1vw 2vw; /* Adjusted padding for larger screens */
+    font-size: 1.5vw; /* Scaled font size */
+  }
+}
+
+/* Styles for large screens */
+@media (min-width: 1200px) {
+  a[href="#main"] {
+    padding: 0.5vw 1vw; /* Smaller padding for very large screens */
+    font-size: 1vw; /* Smaller, but scalable font size */
+  }
 }
 
 /* Reduced Motion - Disable transitions and animations */
 @media (prefers-reduced-motion: reduce) {
   a[href="#main"] {
-    transition: none; /* Disable transitions */
+    transition: none;
   }
-
+  
   a[href="#main"]:hover,
   a[href="#main"]:focus {
-    transform: none; /* Disable transform animations */
+    transform: none;
   }
 }
+
 
 
 /* ----------------- Navigation Styles ----------------- */
@@ -44,6 +66,8 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Default to column layout for smaller screens */
 }
 
 nav ul li {
@@ -75,6 +99,23 @@ nav a:focus {
   outline-offset: 2px;
 }
 
+/* Tablet and PC View - Side-by-side layout */
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row; /* Change to row layout for larger screens */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  nav ul li {
+    margin: 0 1vw; /* Add horizontal spacing between items */
+  }
+
+  nav a {
+    font-size: 2vw; /* Adjust font size for larger screens */
+    padding: 1vw 2vw; /* Adjust padding for a more compact layout */
+  }
+}
+
 /* Reduced Motion - Disable transitions and animations */
 @media (prefers-reduced-motion: reduce) {
   nav a {
@@ -88,6 +129,10 @@ nav a:focus {
 }
 
 
+
+
+
+
 /* ----------------- Header Styles ----------------- */
 header {
   display: flex;
@@ -99,89 +144,169 @@ header {
   background-color: #444;
   color: white;
   padding: 4vw;
+  font-family: 'Arial', sans-serif; /* Default font family */
 }
 
 header h1 {
-  font-size: 10vw;
+  font-size: 10vw; /* Large, scalable font size */
   margin: 1vw 0;
+  font-family: 'Helvetica', sans-serif; /* Font specifically for header h1 */
 }
 
 header h2 {
-  font-size: 5vw;
+  font-size: 5vw; /* Scalable font size */
   margin: 1vw 0;
+  font-family: 'Georgia', serif; /* Font specifically for header h2 */
 }
 
 header a {
   color: #ffcc00;
   text-decoration: none;
-  font-size: 7vw;
+  font-size: 7vw; /* Scalable font size */
+  font-family: 'Verdana', sans-serif; /* Font specifically for links */
 }
 
 header a:hover {
   text-decoration: underline;
+  background-color: #1f1e3e;
 }
 
+/* Adjustments for screens larger than tablet (768px and up) */
+@media (min-width: 768px) {
+  header {
+    padding: 2vw; /* Reduced padding for larger screens */
+    font-family: 'Arial', sans-serif; /* Adjust font-family for larger screens */
+  }
+
+  header h1 {
+    font-size: 4vw; /* Smaller, but scalable font size */
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  header h2 {
+    font-size: 2vw; /* Reduced font size */
+    font-family: 'Georgia', serif;
+  }
+
+  header a {
+    font-size: 2.5vw; /* Adjusted for better readability */
+    font-family: 'Verdana', sans-serif;
+  }
+}
+
+/* Further adjustments for large screens (1200px and up) */
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: 3vw; /* Smaller font size for large screens */
+  }
+
+  header h2 {
+    font-size: 1.5vw;
+  }
+
+  header a {
+    font-size: 1.75vw; /* Smaller, scalable link font size */
+  }
+}
+
+
+
+
+
 /* ----------------- Race Summary Section ----------------- */
+
 #summary {
-  font-size: 4vw;
+  font-size: 4vw; /* Base font size for small screens */
   line-height: 1.6;
   font-weight: normal;
   padding: 4vw;
+  background: radial-gradient(circle, rgba(236, 237, 237, 0.7) 50%, transparent 5%) repeat;
+  background-size: 40px 40px; /* Increase dot size */
 }
 
-/* ----------------- Team Results Section ----------------- */
+/* Adjustments for medium screens (768px and up) */
+@media (min-width: 768px) {
+  #summary {
+    font-size: 2.5vw; /* Smaller font size for medium screens */
+    padding: 3vw; /* Adjusted padding for readability */
+  }
+}
+
+/* Further adjustments for large screens (1200px and up) */
+@media (min-width: 1200px) {
+  #summary {
+    font-size: 1.5vw; /* Even smaller font size for large screens */
+    padding: 2vw; /* Reduced padding for larger screens */
+  }
+}
+
+
+
+
+/******************* team results************/
+
+
 #team-results {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 4vw;
-  background-color: #f5f5f5;
+  padding: 20px;
 }
 
 #team-results h2 {
-  font-size: 6vw;
-  font-weight: bold;
-  margin-bottom: 2vw;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 4.5vw; /* Responsive heading size */
 }
 
 #team-results table {
+  width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
-  width: 90%;
+  padding: 0 10%;
 }
 
 #team-results th, #team-results td {
-  border: 1px solid #ccc;
-  padding: 2vw 4vw;
-  font-size: 4vw;
+  padding: 10px;
   text-align: center;
+  border: 1px solid #ddd;
+  font-size: 4.2vw; /* Responsive text size for table content */
 }
 
 #team-results th {
   background-color: #333;
   color: white;
-  position: sticky;
-  top: 0; /* Sticky header */
 }
 
-#team-results td {
-  background-color: #fff;
-  color: #333;
+#team-results tr:nth-child(odd) td {
+  background-color: #f9f9f9;
 }
 
 #team-results tr:nth-child(even) td {
-  background-color: #f0f0f0; /* Alternating row colors for readability */
+  background-color: #c4c2c2;
 }
 
-/* Make table scrollable for small screens */
-#team-results table {
-  display: block;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  white-space: nowrap; /* Prevent table cells from breaking into multiple lines */
+@media (min-width: 1200px) {
+  #team-results table {
+      padding: 0 20%;
+  }
+
+  /* Adjust font sizes for larger screens if needed */
+  #team-results h2 {
+      font-size: 2.2vw; /* Fixed font size for heading on large screens */
+  }
+
+  #team-results th, #team-results td {
+      font-size: 1.2vw; /* Fixed font size for table content on large screens */
+  }
 }
+
+
+
+
+
+
+
 
 /* ----------------- Individual Results Section ----------------- */
 #individual-results {
@@ -250,16 +375,202 @@ header a:hover {
   color: #821304;
 }
 
+/* General styling for individual results */
+#individual-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 4vw;
+  background: radial-gradient(circle, #f1f8f9 50%, transparent 5%) repeat;
+  background-size: 40px 40px;
+ 
+  
+}
+
+#individual-results h2 {
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+/* Athlete profile styling */
+#individual-results .athlete {
+  margin: 4vw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circular image styling with shadow and responsive size */
+#individual-results img {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #FF5722;
+  object-fit: cover;
+  margin-bottom: 2vw;
+}
+
+/* Athlete caption */
+#individual-results figcaption {
+  font-size: 5vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+/* Athlete details centered */
+#individual-results dl {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  margin: 0;
+  padding: 0;
+}
+
+#individual-results dl dt,
+#individual-results dl dd {
+  display: inline-block;
+  font-size: 4vw;
+  font-weight: normal;
+  color: #333;
+  margin: 0;
+  padding: 0 0.5vw;
+}
+
+#individual-results dl dd {
+  color: #821304;
+}
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+  #individual-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive grid columns */
+    gap: 2vw;
+  }
+
+  #individual-results h2 {
+    grid-column: 1 / -1; /* Make heading span all columns */
+    justify-self: center;
+    font-size: 3vw;
+  }
+
+  #individual-results .athlete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  #individual-results img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%; /* Keep image circular */
+    object-fit: cover;
+  }
+
+  #individual-results figcaption {
+    font-size: 1.5vw;
+  }
+
+  /* Keep Place, Time, and Grade in a single row */
+  /* Athlete details in two columns */
+  #individual-results dl {
+    display: grid;
+    grid-template-columns: auto auto; /* dt and dd in separate columns */
+    gap: 0.5vw;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #individual-results dl dt,
+  #individual-results dl dd {
+    font-size: 1.2vw;
+    margin: 0;
+    padding: 0.2vw;
+  }
+}
+
+
+/************** Filter Option Styling ****************************/
+
+/* Filter label and dropdown styling */
+#individual-results label,
+#individual-results #grade-filter {
+  font-size: 4vw;
+  margin: 0.5vw 0;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Filter dropdown styling */
+#individual-results #grade-filter {
+  padding: 0.5vw 1vw;
+  font-size: 4vw;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000"%3E%3Cpath d="M8.59 16.34L4.24 12l-1.41 1.41L8.59 19l12-12L19.17 5z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1vw center;
+  background-size: 1em;
+}
+
+/* Use a separate row for profiles and adjust font sizes on larger screens */
+@media (min-width: 1200px) {
+  #individual-results {
+    grid-template-rows: auto auto; /* Separate row for heading and filter */
+  }
+
+  #individual-results label,
+  #individual-results #grade-filter {
+    font-size: 2vw; /* Adjust font size on larger screens */
+    grid-column: 1 / -1; /* Span the entire column for heading and filter */
+  }
+
+  #individual-results #grade-filter {
+    padding: 0.5vw 1vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000"%3E%3Cpath d="M8.59 16.34L4.24 12l-1.41 1.41L8.59 19l12-12L19.17 5z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1vw center;
+    background-size: 1em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /* ----------------- Gallery Section ----------------- */
 #gallery {
   padding: 4vw;
-  background-color: #f4f4f4;
+  background: repeating-linear-gradient(90deg, #ffffff, #ffffff 10px, #f0f0f0 10px, #f0f0f0 20px); /* White and light gray stripes */
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
   gap: 4vw; /* Space between images */
   justify-items: center;
   width: 100%;
@@ -269,7 +580,7 @@ header a:hover {
   font-size: 7vw;
   font-weight: bold;
   margin-bottom: 4vw;
-  grid-column: span 3; /* Ensure the heading spans all 3 columns */
+  grid-column: span 3; /* Ensure the heading spans all columns */
 }
 
 #gallery img {
@@ -278,6 +589,111 @@ header a:hover {
   border: 2px solid #ddd;
   border-radius: 8px;
 }
+
+/* Media query for screens wider than 1200px */
+@media (min-width: 1200px) {
+  #gallery {
+    grid-template-columns: repeat(5, 1fr); /* Change to 5 columns */
+  }
+
+  #gallery h2 {
+    grid-column: span 5; /* Adjust heading to span all 5 columns */
+  font-size: 4vw;
+  }
+}
+
+
+
+
+
+
+
+/* ----------------- Lightbox Styles ----------------- */
+
+#lightbox img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Style for the download link in the lightbox */
+#lightbox a {
+  color: #ffcc00;
+  background-color: #06002b;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+#lightbox a:hover,
+#lightbox a:focus {
+  background-color: #2f00e9;
+  color: white;
+  cursor: pointer;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  #lightbox a {
+      transition: none;
+  }
+}
+
+/* Style for navigation buttons */
+#lightbox button {
+  background-color: #333;
+  color: #ffcc00;
+  padding: 10px 15px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+}
+#lightbox button:hover,
+#lightbox button:focus {
+    background-color: #ff9900;
+    color: white;
+    outline: none;
+}
+
+/* Positioning for each button */
+#lightbox button#prevButton {
+  left: 10%;
+}
+
+#lightbox button#nextButton {
+  right: 10%;
+}
+
+/* Media query for larger screens (768px and above) */
+@media (min-width: 768px) {
+  #lightbox button {
+      padding: 15px 20px;
+      font-size: 1.2em;
+  }
+
+  /* Hover and focus styles only on larger screens, without transform */
+  #lightbox button:hover,
+  #lightbox button:focus {
+      background-color: #ff9900;
+      color: white;
+      outline: none;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -324,30 +740,27 @@ footer a:hover i, footer a:focus i {
   color: #ff9900;
 }
 
-
-/* Default Styles (Light Mode) */
-a[href="#main"] {
-  display: inline-block;
-  background-color: #444; /* Dark background */
-  color: white; /* White text */
-  padding: 3vw 6vw;
-  font-size: 5vw;
-  text-decoration: none;
-  border-radius: 5px;
-  margin: 2vw 0;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+/* Make footer thinner for screens larger than 1200px */
+@media (min-width: 1200px) {
+  footer {
+    padding: 2vw;
+  }
+  footer p, footer address, footer a {
+    font-size: 2vw;
+    margin: 0.1vw;
+  }
+  footer a i {
+    font-size: 2.5vw;
+    margin: 0.1vw;
+  }
 }
 
-/**************Dark Mode Styles****************/
-/* ----------------- Race Summary Section ----------------- */
-#summary {
-  font-size: 4vw;
-  line-height: 1.6;
-  font-weight: normal;
-  padding: 4vw;
-  background-color: #fafafa; /* Light mode background */
-  color: #333; /* Light mode text color */
-}
+
+
+
+
+
+
 
 /************** Dark Mode Styles for Summary Section ****************/
 @media (prefers-color-scheme: dark) {
@@ -357,53 +770,7 @@ a[href="#main"] {
   }
 }
 
-/* ----------------- Team Results Section ----------------- */
-#team-results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 4vw;
-  background-color: #f5f5f5; /* Light mode background */
-  color: #333; /* Light mode text color */
-}
 
-#team-results h2 {
-  font-size: 6vw;
-  font-weight: bold;
-  margin-bottom: 2vw;
-}
-
-#team-results table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  width: 90%;
-}
-
-#team-results th, #team-results td {
-  border: 1px solid #ccc;
-  padding: 2vw 4vw;
-  font-size: 4vw;
-  text-align: center;
-}
-
-#team-results th {
-  background-color: #333;
-  color: white;
-  position: sticky;
-  top: 0;
-}
-
-#team-results td {
-  background-color: #fff;
-  color: #333;
-}
-
-#team-results tr:nth-child(even) td {
-  background-color: #f0f0f0; /* Alternating row colors */
-}
 
 /* Dark Mode Styles for Team Results Section */
 @media (prefers-color-scheme: dark) {
@@ -418,79 +785,17 @@ a[href="#main"] {
   }
 
   #team-results td {
-    background-color: #444; /* Dark mode cell background */
-    color: #ddd; /* Dark mode cell text */
+    background-color: #000000; /* Dark mode cell background */
+    color: #000000; /* Dark mode cell text */
   }
 
   #team-results tr:nth-child(even) td {
     background-color: #555; /* Dark mode alternating row colors */
   }
 }
-/* ----------------- Individual Results Section ----------------- */
-#individual-results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 4vw;
-  background-color: #fafafa; /* Light mode background */
-  color: #333; /* Light mode text color */
-}
 
-#individual-results h2 {
-  font-size: 6vw;
-  font-weight: bold;
-  margin-bottom: 2vw;
-}
 
-/* Athlete profile styling */
-#individual-results .athlete {
-  margin: 4vw 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-/* Circular image styling with shadow and responsive size */
-#individual-results img {
-  width: 40vw;
-  height: 40vw;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  border: 3px solid #FF5722;
-  object-fit: cover;
-  margin-bottom: 2vw;
-}
-
-/* Athlete caption */
-#individual-results figcaption {
-  font-size: 5vw;
-  font-weight: bold;
-  margin-bottom: 2vw;
-}
-
-/* Athlete details centered */
-#individual-results dl {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4vw;
-  margin: 0;
-  padding: 0;
-}
-
-#individual-results dl dt, #individual-results dl dd {
-  display: inline-block;
-  font-size: 4vw;
-  font-weight: normal;
-  color: #333; /* Light mode text color */
-}
-
-#individual-results dl dd {
-  color: #821304;
-}
 
 /* Dark Mode Styles for Individual Results Section */
 @media (prefers-color-scheme: dark) {
@@ -513,37 +818,7 @@ a[href="#main"] {
   }
 }
 /* ----------------- Gallery Section ----------------- */
-#gallery {
-  padding: 4vw;
-  background-color: #f4f4f4; /* Light mode background */
-  text-align: center;
-}
 
-#gallery h2 {
-  font-size: 7vw;
-  font-weight: bold;
-  margin-bottom: 4vw;
-}
-
-#image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
-  grid-gap: 4vw;
-  justify-items: center;
-  width: 100%;
-}
-
-#image-gallery img {
-  width: 100%;
-  height: auto;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-#image-gallery img:hover {
-  transform: scale(1.05);
-}
 
 /* Dark Mode Styles for Gallery Section */
 @media (prefers-color-scheme: dark) {
@@ -560,3 +835,183 @@ a[href="#main"] {
     color: #fff; /* Dark mode text color for the heading */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************focus***************************************************************/
+
+/* Focus styling for headings */
+h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus {
+  outline: 4px solid #0800ff;
+  padding: 2px;
+}
+
+/* Focus styling for links */
+a:focus {
+  outline: 4px solid #5100ff;
+  text-decoration: underline;
+}
+
+
+
+
+
+/**************image popup*******************************/
+/* Universal image hover effect */
+img {
+  transition: transform 0.3s ease, filter 0.5s ease; /* Smooth transition for transform and filter */
+}
+
+img:hover,
+img:focus {
+  transform: scale(1.3); /* Slightly enlarge the image */
+  animation: grayscaleEffect 6s forwards; /* Trigger grayscale animation */
+}
+
+/* Define the grayscale animation */
+@keyframes grayscaleEffect {
+  0% {
+    filter: grayscale(100%); /* Start in grayscale */
+  }
+  100% {
+    filter: grayscale(0%); /* End in normal color */
+  }
+}
+
+/* Focus styling for images */
+img:focus {
+  outline: 4px solid #1500ff;
+}
+
+/* Reduced Motion - Disable transitions and animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  img {
+    transition: none; /* Remove all transitions */
+  }
+
+  img:hover,
+  img:focus {
+    transform: none; /* No scaling */
+    animation:none;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*********for index********************************************************************/
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Light background */
+  color: #333; /* Dark text */
+}
+
+/* Header Styles */
+#overview-header {
+  background-color: #444; /* Dark background */
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  min-height:10vh;
+}
+
+#overview-header .overview-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Navigation Styles */
+#meet-navigation {
+  background-color: #9ea155;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+#meet-navigation .meet-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+}
+
+#meet-navigation .meet-list li {
+  margin: 0.5rem 0;
+}
+
+#meet-navigation a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #252320;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#meet-navigation a:hover,
+#meet-navigation a:focus {
+  background-color: #ff9900;
+  transform: scale(1.05);
+  outline: 2px solid yellow;
+  outline-offset: 3px;
+}
+
+/* Footer Styles */
+#site-footer {
+  background-color: #444;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#site-footer .footer-text {
+  margin: 0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  #meet-navigation a {
+      transition: none;
+  }
+  #meet-navigation a:hover,
+  #meet-navigation a:focus {
+      transform: none;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body, #overview-header, #site-footer {
+      background-color: #333;
+      color: #ddd;
+  }
+
+  #meet-navigation {
+      background-color: #444;
+  }
+
+  #meet-navigation a {
+      background-color: #555;
+      color: #ddd;
+  }
+}
+
