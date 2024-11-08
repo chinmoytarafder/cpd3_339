@@ -825,7 +825,7 @@ footer a:hover i, footer a:focus i {
 /* Dark Mode Styles for Gallery Section */
 @media (prefers-color-scheme: dark) {
   #gallery {
-    background-color: #333; /* Dark mode background */
+    background: repeating-linear-gradient(90deg, #353434, #646464 10px, #a2a4c1 10px, #a4abca 20px); /* White and light gray stripes */
     color: #ddd; /* Dark mode text color */
   }
 
