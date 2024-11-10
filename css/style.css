@@ -100,7 +100,7 @@ nav a:focus {
 }
 
 /* Tablet and PC View - Side-by-side layout */
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   nav ul {
     flex-direction: row; /* Change to row layout for larger screens */
     justify-content: center; /* Center items horizontally */
@@ -446,7 +446,7 @@ header a:hover {
 }
 
 /* Media query for larger screens */
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   #individual-results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive grid columns */
@@ -523,7 +523,7 @@ header a:hover {
 }
 
 /* Use a separate row for profiles and adjust font sizes on larger screens */
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   #individual-results {
     grid-template-rows: auto auto; /* Separate row for heading and filter */
   }
